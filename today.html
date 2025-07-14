@@ -5,23 +5,21 @@
     <style>
         #lbl {
             font-family: serif;
-            font-size: x-large;
             color: #800080;
             padding: 20px;
             border: 1px solid #ececec;
             text-align: center;
             line-height: 1.8;
-            text-transform: lowercase; /* forces all text inside to appear lowercase */
+            text-transform: lowercase;
         }
 
         #date {
-            font-weight: bold;
-            font-size: x-large;
+            font-size: medium;
         }
 
         #greeting {
-            font-size: small;
-            margin-top: 10px;
+            font-size: large;
+            font-weight: bold;
         }
 
         body {
@@ -43,7 +41,7 @@
         const day = today.getDate();
         const year = today.getFullYear();
 
-        const formattedDate = `${dayName}, date: ${monthName} ${day}, ${year}`;
+        const formattedDate = `${dayName}, ${monthName} ${day}, ${year}`;
 
         const hour = today.getHours();
         let greet;
