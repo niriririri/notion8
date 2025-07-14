@@ -3,32 +3,41 @@
 <head>
     <title>greeting message</title> 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+        body {
+            background-color: white;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
         #lbl {
-            font-family: serif;
             color: #800080;
-            padding: 20px;
-            border: 1px solid #ececec;
             text-align: center;
-            line-height: 1.8;
             text-transform: lowercase;
         }
 
         #date {
-            font-size: 12px; /* much smaller */
+            font-size: 14px; /* subtle, like on that site */
+            opacity: 0.7;
         }
 
         #greeting {
-            font-size: 32px; /* clearly bigger */
-            font-weight: bold;
-        }
-
-        body {
-            background-color: white;
+            font-size: 36px; /* bold and warm like the page */
+            font-weight: 600;
+            margin-top: 8px;
         }
     </style>
 </head>
 <body>
-    <div id="lbl"></div>
+    <div id="lbl">
+        <div id="date"></div>
+        <div id="greeting"></div>
+    </div>
 
     <script>
         const weekdays = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
@@ -42,6 +51,7 @@
         const year = today.getFullYear();
 
         const formattedDate = `${dayName}, ${monthName} ${day}, ${year}`;
+        document.getElementById("date").textContent = formattedDate;
 
         const hour = today.getHours();
         let greet;
@@ -54,10 +64,7 @@
             greet = "good evening, niri!";
         }
 
-        document.getElementById("lbl").innerHTML = `
-            <div id="date">${formattedDate}</div>
-            <div id="greeting">${greet}</div>
-        `;
+        document.getElementById("greeting").textContent = greet;
     </script>
 </body>
 </html>
