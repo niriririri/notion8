@@ -14,11 +14,11 @@
         }
 
         #date {
-            font-size: 16px; /* smaller, like "medium" */
+            font-size: 12px; /* much smaller */
         }
 
         #greeting {
-            font-size: 24px; /* larger, more readable */
+            font-size: 32px; /* clearly bigger */
             font-weight: bold;
         }
 
@@ -40,3 +40,24 @@
         const monthName = months[today.getMonth()];
         const day = today.getDate();
         const year = today.getFullYear();
+
+        const formattedDate = `${dayName}, ${monthName} ${day}, ${year}`;
+
+        const hour = today.getHours();
+        let greet;
+
+        if (hour < 12) {
+            greet = "good morning, niri!";
+        } else if (hour < 17) {
+            greet = "good afternoon, niri!";
+        } else {
+            greet = "good evening, niri!";
+        }
+
+        document.getElementById("lbl").innerHTML = `
+            <div id="date">${formattedDate}</div>
+            <div id="greeting">${greet}</div>
+        `;
+    </script>
+</body>
+</html>
